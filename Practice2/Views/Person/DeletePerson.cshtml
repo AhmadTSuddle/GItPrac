@@ -1,0 +1,46 @@
+@model Practice2.Models.Person
+
+@{
+    ViewData["Title"] = "DeletePerson";
+}
+
+<h2>DeletePerson</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonDob)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonDob)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonSkill)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonSkill)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeletePerson">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

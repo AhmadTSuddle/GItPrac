@@ -1,0 +1,53 @@
+@model IEnumerable<Practice2.Models.Person>
+
+@{
+    ViewData["Title"] = "ViewPerson";
+}
+
+<h2>ViewPerson</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonDob)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonSkill)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonDob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonSkill)
+            </td>
+            <td>
+                <a href="/Person/EditPerson?PersonId =@item.PersonId">Edit</a>
+                <a href="/Person/DetailPerson?PersonId =@item.PersonId">Detail</a>
+                <a href="/Person/DeletePerson?PersonId =@item.PersonId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+@model Practice2.Models.Person
+
+@{
+    ViewData["Title"] = "DetailPerson";
+}
+
+<h2>DetailPerson</h2>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonDob)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonDob)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonSkill)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PersonSkill)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
